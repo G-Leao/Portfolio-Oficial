@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <link rel="stylesheet" href="index.css">
+
+    <!--fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Italiana&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Playwrite+IE:wght@100..400&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!--italiana, playwrite, oswald, dancing script, saira-->
+
+    <!--icones-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    
+<header>
+  <nav>
+    <h2 class="logo"><i> Portfólio</i>  <span id="logo-span"><i> <strong>DEV Gustavo</strong>  </i></span>  </h2>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#projects">Projetos</a></li>
+      <li><a href="#contact">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h1>Olá, eu sou o <span id = "nome" style="color: aqua;"><i>Gustavo</i></span></h1>
+            <h2><i>Estudante de Engenharia de Software focado em Desenvolvimento e evolução constante</i></h2>
+            
+  
+
+                <div class="botoes-home">
+                    <a href="#projects" class="btn">Ver Projetos</a>
+                    <a href="#contact" class="btn-outline">Contato</a>
+                </div>
+
+
+<div class="tech-stack">
+
+    <div class="tech-item">
+        <i class="devicon-html5-plain colored"></i>
+        <span>HTML</span>
+        <small><strong>Intermediário</strong></small>
+    </div>
+
+    <div class="tech-item">
+        <i class="devicon-css3-plain colored"></i>
+        <span><strong>CSS</strong></span>
+        <small>Intermediário</small>
+    </div>
+
+    <div class="tech-item">
+        <i class="devicon-javascript-plain colored"></i>
+        <span><strong>JavaScript</strong></span>
+        <small>Intermediário</small>
+    </div>
+
+    <div class="tech-item">
+        <i class="devicon-java-plain colored"></i>
+        <span>Java</span>
+        <small>Básico</small>
+    </div>
+
+    <div class="tech-item">
+        <i class="devicon-c-plain colored"></i>
+        <span>C</span>
+        <small>Básico</small>
+    </div>
+
+</div>
+            
+        </div>
+    </section>
+    
+    <!--sobre mim-->
+<section class="about" id="about">
+    <div class="about-content">
+
+        <h1><strong><i>Sobre Mim</i></strong></h1>
+
+        <div class="about-box">
+            <img src="imgs/perfil.jpeg" alt="Foto de perfil" class="perfil-img">
+
+            <div class="texto-about">
+                <p>
+                    Sou estudante de Engenharia de Software, apaixonado por tecnologia e desenvolvimento de soluções digitais.
+                </p>
+                <p>
+                    Tenho focado meus estudos em desenvolvimento web, criando projetos com HTML, CSS e JavaScript.
+                </p>
+                <p>
+                    Busco evoluir constantemente, com disciplina, prática e foco em crescimento profissional.
+                </p>
+<br>
+                <p class="frase" id="frase">
+                    <i><strong>A Disciplina adquirida através do esporte contribui diretamente para minha consistência e foco nos estudos e projetos.</strong></i>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+    <!--projetos-->
+<section class="projects" id="projects">
+    <div class="projects-content">
+
+<div class="divisor">
+    <span class="bolinha"></span>
+</div>
+
+        <h2>Projetos</h2>
+
+        <p>Confira alguns dos meus projetos mais recentes.</p>
+
+        <!-- PROJETO 1 -->
+        <div class="card-projeto">
+            <img src="imgs/interfaceLogin.png" class="projeto-img" onclick="abrirImagem(this)">
+
+            <div class="texto-projeto">
+                <h3><i>Projeto Interface de Login</i></h3>
+                    <h4><strong>Sistema de autenticação com validações em tempo real</strong></h4>
+                    <p>Interface moderna de login desenvolvida com foco em usabilidade e experiência do usuário.
+                       Possui validação de campos, feedback visual para erros e interações dinâmicas com JavaScript,
+                       garantindo maior segurança e clareza no processo de autenticação.
+
+                    </p>
+<p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
+                    <a href="https://github.com/G-Leao/login-page" target="_blank" rel="noopener noreferrer">
+                        <button class="btn">Ver no GitHub</button>
+                    </a>
+
+            </div>
+        </div>
+
+        <!-- IMAGEM EXTRA DO PROJETO 1 -->
+        <div class="card-projeto">
+            <img src="imgs/esqueceuLogin.png" class="projeto-img" onclick="abrirImagem(this)">
+
+            <div class="texto-projeto">
+                <h3><i>Recuperação de Senha</i></h3>
+                  <h4><strong>Fluxo de redefinição de acesso do usuário</strong></h4>
+                  <p>
+                    Funcionalidade complementar ao sistema de login que permite ao usuário recuperar o acesso à conta.
+                    Inclui validação de dados e interface intuitiva para envio de informações, simulando um fluxo real
+                    de recuperação de senha presente em sistemas profissionais.
+
+                  </p>
+<p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
+                    <a href="https://github.com/G-Leao/login-page" target="_blank" rel="noopener noreferrer">
+                        <button class="btn">Ver no GitHub</button>
+                    </a>
+
+            </div>
+        </div>
+
+        <!-- PROJETO 2 -->
+        <div class="card-projeto">
+            <img src="imgs/sistema_de_cadastro.png" class="projeto-img" onclick="abrirImagem(this)">
+
+            <div class="texto-projeto">
+                <h3><i>Projeto Sistema de Cadastro</i></h3>
+                <h4><strong>Gerenciamento de usuários com armazenamento local</strong></h4>
+                         <p>
+                             Sistema de cadastro desenvolvido utilizando LocalStorage para persistência de dados no navegador.
+                            Permite registrar, armazenar e validar informações de usuários sem necessidade de backend,
+                            simulando o funcionamento de aplicações reais e reforçando conceitos de manipulação de dados no front-end.
+</p>
+<p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
+                    <a href="https://github.com/G-Leao/pagina-de-cadastro" target="_blank" rel="noopener noreferrer">
+                        <button class="btn">Ver no GitHub</button>
+                    </a>
+            </div>
+        </div>
+        <div class="card-projeto">
+            <img src="imgs/sistemadecomissao.png" class="projeto-img" onclick="abrirImagem(this)">
+            <div class="texto-projeto">
+                <h3><i>Projeto Sistema de Comissão</i></h3>
+                <h4><strong>Cálculo automático de comissões com base em vendas</strong></h4>
+                         <p>
+                        Sistema desenvolvido para calcular comissões de forma automatizada com base em valores de vendas.
+                        Permite inserir dados, aplicar regras de cálculo e retornar resultados de forma rápida e precisa.
+                        Focado em lógica de programação e manipulação de dados, simulando cenários reais do ambiente comercial.
+</p>
+
+<p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
+                <a href="https://github.com/G-Leao/Sistema-de-comiss-o" target="_blank" rel="noopener noreferrer">
+                    <button class="btn">Ver no GitHub</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="card-projeto">
+            <img src="imgs/SistemaGestaoVendas.png" class="projeto-img" onclick="abrirImagem(this)">
+            <div class="texto-projeto">
+                <h3><i>Projeto Sistema de Gestão de Vendas</i></h3>
+                <h4><strong>Controle e análise de vendas com relatórios</strong></h4>
+                <p>
+                    Sistema de gestão de vendas desenvolvido para facilitar o controle e análise das operações comerciais.
+                    Inclui funcionalidades para registro de vendas, geração de relatórios e acompanhamento de desempenho,
+                    simulando um ambiente profissional de gestão comercial.
+                </p>
+                <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
+                <a href="https://github.com/G-Leao/Sistema-de-gestao-de-vendas" target="_blank" rel="noopener noreferrer">
+                    <button class="btn">Ver no GitHub</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!--contatos-->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2>Contatos</h2>
+            <p>Entre em contato comigo para mais informações.</p>
+
+
+       <div class="contatos">
+            <a href="https://github.com/G-Leao" target="_blank">
+                <i class="fa-brands fa-github"></i>            
+            </a>   
+            <a href="https://www.linkedin.com/in/gustavo-leão-24a7a82a2/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/g.leao.03/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://www.tiktok.com/@gzin_leao " target="_blank">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a href="mailto:gustamt2019@gmail.com" target="_blank">
+            <i class="fa-brands fa-google"></i>
+        </a>
+
+        <a href="https://wa.me/5542999869526" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        </div>
+
+        
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Meu Portfólio DEV>Leão. Todos os direitos reservados.</p>
+    </footer>
+    
+    <div id="modal" class="modal" onclick="fecharImagem()">
+    <img id="img-ampliada" class="modal-img">
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

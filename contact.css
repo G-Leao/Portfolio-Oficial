@@ -1,0 +1,260 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Saira', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    color: white;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* HEADER (REAPROVEITADO VISUALMENTE) */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+    background: rgba(15, 23, 42, 0.6);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.logo h2 {
+    font-weight: 500;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    padding: 6px;
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+    font-size: 20px;
+}
+
+/* LINHA ANIMADA */
+.nav-item a::after {
+    content: "";
+    position: absolute;
+    top: -4px; /* igual ao primeiro */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background: #38bdf8;
+    transition: 0.3s ease;
+}
+
+.nav-item a:hover::after {
+    width: 120%; /* passa do texto */
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 26px;
+    left: 0;
+    background: #1e293b;
+    border-radius: 10px;
+    overflow: hidden;
+    list-style: none;
+
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.dropdown-menu li {
+    padding: 10px 20px;
+}
+
+
+.dropdown-menu li a {
+    position: relative;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.dropdown-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 0%;
+    height: 2px;
+    background: #38bdf8;
+    transform: translateX(-50%);
+    transition: 0.3s ease;
+}
+
+.dropdown-menu li a:hover::after {
+    width: 120%;
+}
+
+.dropdown-menu li:hover {
+    background: #334155;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+
+
+/* MENU MOBILE */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+/* CONTEÚDO */
+.contact-content {
+    padding-top: 140px;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    animation: fadeUp 1s ease;
+}
+
+.contact-content h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.contact-content p {
+    color: #94a3b8;
+    margin-bottom: 40px;
+}
+
+/* CARD */
+.contatos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    background: rgba(255,255,255,0.03);
+    padding: 40px;
+    border-radius: 16px;
+
+    border: 1px solid rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+}
+
+/* ÍCONES */
+.contatos a {
+    color: white;
+    font-size: 36px;
+    text-decoration: none;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+
+    transition: 0.3s;
+}
+
+.contatos a:hover {
+    transform: translateY(-6px) scale(1.1);
+    background: #38bdf8;
+    color: black;
+    box-shadow: 0 0 20px #38bdf8;
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FOOTER */
+footer {
+
+    padding: 20px;
+    text-align: center;
+
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+footer p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+    }
+
+    .contact-content h2 {
+        font-size: 28px;
+    }
+
+    .contatos {
+        padding: 25px;
+        gap: 15px;
+    }
+
+    .contatos a {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+}

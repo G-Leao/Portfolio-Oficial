@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto - Sistema de Gestão de Vendas</title>
+
+    <link rel="stylesheet" href="projects.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Italiana&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Playwrite+IE:wght@100..400&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar">
+
+            <div class="logo">
+                <h2><span>Projetos</span></h2>
+            </div>
+
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+
+            <ul class="nav-menu" id="nav-menu">
+
+                <li class="nav-item">
+                    <a href="index.html">Início</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="about.html">Sobre</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#">Projetos ▾</a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="projects1.html">Interface de Login</a></li>
+                        <li><a href="projects2.html">Sistema de Cadastro</a></li>
+                        <li><a href="projects3.html">Sistema de Comissão</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contact.html">Contato</a>
+                </li>
+
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+<main class="projects-content">
+
+        <h2 class="titulo">Sistema de Gestão de Vendas (Sistema PRO)</h2>
+        <p class="subtitulo">
+            Uma jornada de uso: do zero ao controle total de desempenho.
+        </p>
+
+        <section class="card-projeto">
+            <img src="imgs/inicial.png" 
+                 class="projeto-img" 
+                 alt="Visão inicial do sistema vazio" 
+                 onclick="abrirImagem(this)">
+            
+            <div class="texto-projeto">
+                <h3> Ponto de Partida</h3>
+                <h4>O Dashboard Zerado</h4>
+                <p>
+                    Todo grande controle começa com uma tela em branco. Esta é a visão inicial do <strong>Sistema PRO</strong>. 
+                    Neste estágio, o LocalStorage está vazio. Os KPIs de 'Total Vendido', 'Quantidade' e 'Comissão' mostram 
+                    valor zero, e a meta ainda não foi definida.
+                </p>
+                <p>
+                    A interface limpa destaca os módulos de navegação no topo, prontos para receber o cadastro de 
+                    vendedores e produtos antes do primeiro registro de venda.
+                </p>
+            </div>
+        </section>
+
+        <div class="divisor"><span class="bolinha"></span></div>
+
+        <section class="card-projeto">
+            <div class="texto-projeto">
+                <h3> Operação</h3>
+                <h4>Registrando a Venda</h4>
+                <p>
+                    Nesta fase, simulamos a rotina do operador. Após cadastrar produtos e vendedores em suas 
+                    respectivas telas, utilizamos o formulário 'Registrar Venda'. 
+                </p>
+                <p>
+                    A imagem demonstra o momento exato do preenchimento: selecionamos o produto (ex: Barba), 
+                    definimos o valor de R$ 30 e atribuímos ao vendedor (joao). Repare na <strong>validação visual</strong> 
+                    do CSS, destacando os campos com bordas verdes, indicando que estão prontos para o cadastro.
+                </p>
+            </div>
+            <img src="imgs/preenchendo.png" 
+                 class="projeto-img" 
+                 alt="Formulário de cadastro de venda preenchido" 
+                 onclick="abrirImagem(this)">
+        </section>
+
+        <div class="divisor"><span class="bolinha"></span></div>
+
+        <section class="card-projeto">
+            <img src="imgs/pronto.png" 
+                 class="projeto-img" 
+                 alt="Dashboard populado com dados e lista de vendas" 
+                 onclick="abrirImagem(this)">
+
+            <div class="texto-projeto">
+                <h3>Resultado e Análise</h3>
+                <h4>Visão Geral Atualizada</h4>
+                <p>
+                    Após realizar três vendas, este é o resultado. O sistema processa os dados instantaneamente: 
+                    o 'Total Vendido' salta para R$ 90.00, a 'Quantidade' para 3, e a comissão de 5% é calculada. 
+                    Definimos uma meta de R$ 200.00 para ativar o controle de progresso.
+                </p>
+                <p>
+                    Abaixo do formulário, uma <strong>lista dinâmica</strong> exibe o histórico detalhado das 
+                    vendas realizadas, oferecendo a opção de remover registros individualmente (botão X vermelho), 
+                    o que recalcula todo o dashboard automaticamente.
+                </p>
+                <a href="https://github.com/G-Leao/Sistema-de-gestao-de-vendas" target="_blank">
+                    <button class="btn">Ver no GitHub</button>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 Portfólio DEV Gustavo. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal" onclick="fecharImagem()">
+        <img id="img-ampliada" class="modal-img">
+    </div>
+
+    <script src="projects.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="projects.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Italiana&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Playwrite+IE:wght@100..400&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+            
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+        <nav class="navbar">
+
+            <div class="logo">
+                <h2><span><i>P R O J E T O S </i></span></h2>
+            </div>
+
+            <div class="menu-toggle" id="menu-toggle">
+                ☰
+            </div>
+
+            <ul class="nav-menu" id="nav-menu">
+
+                <li class="nav-item">
+                    <a href="index.html">Início</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="about.html">Sobre</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a href="#">Projetos ▾</a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="projects2.html">Sistema de Cadastro</a></li>
+                        <li><a href="projects3.html">Sistema de Comissao</a></li>
+                        <li><a href="projects4.html">Gestor de Vendas</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="contact.html">Contato</a>
+                </li>
+
+            </ul>
+
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="projects-content">
+
+
+        <!-- TÍTULO -->
+        <h2 class="titulo">
+    <span>Interface de Login</span>
+
+       </h2>
+        <p class="subtitulo">Confira um dos meus projetos mais recentes.</p>
+
+        <!-- PROJETO 1 -->
+        <section class="card-projeto">
+
+            <img src="imgs/interfaceLogin.png" 
+                 class="projeto-img" 
+                 alt="Interface de Login"
+                 onclick="abrirImagem(this)">
+
+            <div class="texto-projeto">
+                <h3>Projeto Interface de Login</h3>
+
+                <h4>Sistema de autenticação com validações em tempo real</h4>
+
+                <p> <i>
+                    Interface moderna de login desenvolvida com foco em usabilidade e experiência do usuário.
+                    Possui validação de campos, feedback visual para erros e interações dinâmicas com JavaScript,
+                    garantindo maior segurança e clareza no processo de autenticação.
+                </i>
+                </p>
+
+                <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
+
+                <a href="https://github.com/G-Leao/login-page" target="_blank" rel="noopener noreferrer">
+                    <button class="btn">Ver no GitHub</button>
+                </a>
+            </div>
+
+        </section>
+
+                <div class="divisor">
+            <span class="bolinha"></span>
+        </div>
+
+        <!-- PROJETO 1 - EXTRA -->
+        <section class="card-projeto">
+
+            <img src="imgs/esqueceuLogin.png" 
+                 class="projeto-img" 
+                 alt="Recuperação de senha"
+                 onclick="abrirImagem(this)">
+
+            <div class="texto-projeto">
+                <h3>Recuperação de Senha</h3>
+
+                <h4>Fluxo de redefinição de acesso do usuário</h4>
+
+                <p>
+                    Funcionalidade complementar ao sistema de login que permite ao usuário recuperar o acesso à conta.
+                    Inclui validação de dados e interface intuitiva para envio de informações, simulando um fluxo
+                    real de recuperação de senha presente em sistemas profissionais.
+                </p>
+
+                <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
+
+                <a href="https://github.com/G-Leao/login-page" target="_blank" rel="noopener noreferrer">
+                    <button class="btn">Ver no GitHub</button>
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 Portfólio DEV Gustavo. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal" onclick="fecharImagem()">
+        <img id="img-ampliada" class="modal-img" alt="Imagem ampliada">
+    </div>
+
+    <!-- JS -->
+    <script src="projects.js"></script>
+
+</body>
+
+</html>

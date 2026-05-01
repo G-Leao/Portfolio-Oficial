@@ -20,7 +20,7 @@ main {
 }
 
 
-#nome {
+.nome {
   font-family: 'Saira', sans-serif;
   font-weight: 800;
   display: inline-block;
@@ -63,13 +63,53 @@ background: linear-gradient(
 } 
 /*HEADER */
 .header {
-    position: fixed;
+    position: fixed; /* mantém só esse */
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* 🔥 importante */
+
     backdrop-filter: blur(12px);
-    background: rgba(22, 35, 64, 0.351);
+    background: rgba(22, 35, 64, 0.35);
+
     border-bottom: 1px solid rgba(255,255,255,0.05);
+
+    overflow: visible; /* 🔥 importante para a linha animada */
+}
+
+/* LINHA EM MOVIMENTO */
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -20%;
+    z-index: 0;
+    pointer-events: none;
+  
+
+    width: 80px;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(56,189,248,0.4),
+        #38bdf8,
+        rgba(56,189,248,0.4),
+        transparent
+    );
+
+    filter: blur(1px);
+
+    animation: lineMove 4s linear infinite;
+}
+
+@keyframes lineMove {
+    0% {
+        left: -20%;
+    }
+    100% {
+        left: 120%;
+    }
 }
 
 .navbar {
@@ -77,6 +117,8 @@ background: linear-gradient(
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
+    position: relative;
+    z-index: 2;
 }
 
 /* LOGO */
@@ -100,7 +142,11 @@ background: linear-gradient(
     gap: 30px;
 }
 
-.nav-item a {
+.nav-item a, .dropdown-toggle {
+
+    all: unset; 
+    display: inline-block;
+
     color: white;
     text-decoration: none;
     position: relative;
@@ -111,7 +157,7 @@ background: linear-gradient(
 }
 
 /* LINHA ANIMADA */
-.nav-item a::after {
+.nav-item a::after,.dropdown-toggle::after {
     content: "";
     position: absolute;
     top: -4px; /* igual ao primeiro */
@@ -140,11 +186,17 @@ background: linear-gradient(
     border-radius: 10px;
     overflow: hidden;
     list-style: none;
+    z-index: 9999;
 
     opacity: 0;
     transform: translateY(10px);
     pointer-events: none;
     transition: 0.3s;
+
+        position: absolute;
+    top: 100%; /* 🔥 melhor que 40px */
+    left: 0;
+    min-width: 180px;
 }
 
 .dropdown-menu li {
@@ -193,9 +245,14 @@ background: linear-gradient(
     cursor: pointer;
 }
 
+.dropdown-toggle {
+    font-family: 'Saira', sans-serif;
+    text-decoration: none;
+}
+
 /* HOME */
 .home-content {
-    padding-top: 55px;
+    padding-top: 95px;
     max-width: 1100px;
     margin: auto;
     text-align: center;
@@ -271,6 +328,7 @@ background: linear-gradient(
     text-align: center;
     transition: 0.3s;
     border: 1px solid rgba(255,255,255,0.05);
+     backdrop-filter: blur(10px);
 }
 
 .tech-item i {
@@ -322,10 +380,10 @@ background: linear-gradient(
     }
 
     .dropdown-menu {
-        position: static;
-        opacity: 1;
-        transform: none;
-        display: none;
+        position: static; /* 🔥 ESSENCIAL */
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 8px;
     }
 
     .dropdown.active .dropdown-menu {
@@ -348,6 +406,44 @@ background: linear-gradient(
     backdrop-filter: blur(12px);
 
     border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.redes {
+    position: relative;
+    overflow: hidden;
+}
+
+.redes::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -20%;
+
+    width: 80px;
+    height: 2px;
+
+    background: linear-gradient(
+        270deg, /* invertido */
+        transparent,
+        rgba(56,189,248,0.4),
+        #38bdf8,
+        rgba(56,189,248,0.4),
+        transparent
+    );
+
+    filter: blur(1px);
+
+    animation: lineMoveReverse 4s linear infinite;
+    animation-delay: 4s; /* metade do tempo */
+}
+
+@keyframes lineMoveReverse {
+    0% {
+        right: -20%;
+    }
+    100% {
+        right: 120%;
+    }
 }
 
 /* TEXTO */

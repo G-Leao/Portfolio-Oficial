@@ -1,16 +1,21 @@
+const dropdown = document.querySelector(".dropdown");
+const toggle = document.querySelector(".dropdown-toggle");
 
-//ESSE E DO ABOUT--->
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-}, {
-    threshold: 0.15
+// abrir/fechar ao clicar
+toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle("active");
 });
 
-document.querySelectorAll('.fade-slide').forEach(el => {
-    observer.observe(el);
+// fechar ao clicar fora
+document.addEventListener("click", () => {
+    dropdown.classList.remove("active");
 });
-//ate aqui
+
+
+const menuToggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-menu");
+
+menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+});

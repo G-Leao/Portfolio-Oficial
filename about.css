@@ -10,6 +10,7 @@ body {
     background: linear-gradient(135deg, #0f172a, #020617);
     color: white;
     min-height: 100vh;
+    padding-top: 80px;
 
     display: flex;
     flex-direction: column;
@@ -45,7 +46,10 @@ body {
     gap: 30px;
 }
 
-.nav-item a {
+.nav-item a, .dropdown-toggle {
+
+        all: unset;
+    display: inline-block;
     color: white;
     text-decoration: none;
     position: relative;
@@ -53,6 +57,11 @@ body {
     transition: 0.3s;
     letter-spacing: 0.5px;
     font-size: 20px;
+}
+
+.dropdown-toggle {
+    font-family: 'Saira', sans-serif;
+    cursor: pointer;
 }
 
 /* LINHA ANIMADA */
@@ -517,20 +526,99 @@ footer {
 /* RESPONSIVO */
 @media (max-width: 768px) {
 
-    .about-box {
-        flex-direction: column;
-        text-align: center;
+    .menu-toggle {
+        display: block;
     }
 
-    .perfil-img {
-        width: 150px;
-    }
+.nav-menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: #0f172a;
 
-    .tech-stack {
-        flex-wrap: wrap;
-    }
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+}
+
+.nav-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+.dropdown {
+    position: relative;
+    z-index: 1000;
+}
+
+
+.dropdown-menu {
+    position: absolute;
+    z-index: 9999;
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    transition: max-height 0.3s ease;
+}
+
+.dropdown.active .dropdown-menu {
+    max-height: 500px;
+
+    opacity: 2;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.nav-menu li {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.nav-menu a {
+    display: block;
+    width: 100%;
+}
+
+.about-box {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px; /* espaço entre imagem e texto */
+    padding: 0 15px; /* respiro lateral */
+}
+.perfil-img {
+    width: 60%;
+    max-width: 180px;
+    margin: 0 auto;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tech-item {
+    width: 120px;
+}
+
+.texto-about {
+    font-size: 14px;
+    line-height: 1.6;
+}
+.about-box h1,
+.about-box h2 {
+    font-size: 22px;
+}
 
 }
+/* RESPONSIVO PARA ABOUT.HTML */
 
 .dev-section {
     margin-top: 100px;

@@ -10,6 +10,7 @@ body {
     background: linear-gradient(135deg, #0f172a, #020617);
     color: white;
     min-height: 100vh;
+    padding-top: 80px;
 
     display: flex;
     flex-direction: column;
@@ -361,34 +362,48 @@ background: linear-gradient(
         display: block;
     }
 
-    .nav-menu {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        background: #0f172a;
+.nav-menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: #0f172a;
 
-        max-height: 0;
-        overflow: hidden;
-        transition: 0.4s;
-    }
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
 
-    .nav-menu.active {
-        max-height: 300px;
-    }
+    transition: all 0.3s ease;
+}
 
-    .dropdown-menu {
-        position: static; /* 🔥 ESSENCIAL */
-        width: 100%;
-        margin-top: 10px;
-        border-radius: 8px;
-    }
+.nav-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+.dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    width: 100%;
+    transition: max-height 0.3s ease;
+}
 
-    .dropdown.active .dropdown-menu {
-        display: block;
-    }
+.dropdown.active .dropdown-menu {
+    max-height: 500px; /* alto o suficiente */
+}
+
+.nav-menu li {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.nav-menu a {
+    display: block;
+    width: 100%;
+}
 
     .home-content h1 {
         font-size: 30px;

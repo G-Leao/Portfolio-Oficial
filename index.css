@@ -157,6 +157,7 @@ background: linear-gradient(
     font-size: 20px;
 }
 
+
 /* LINHA ANIMADA */
 .nav-item a::after,.dropdown-toggle::after {
     content: "";
@@ -209,6 +210,7 @@ background: linear-gradient(
     position: relative;
     display: inline-block;
     padding: 5px 0;
+    cursor: pointer;
 }
 
 .dropdown-menu li a::after {
@@ -229,6 +231,7 @@ background: linear-gradient(
 
 .dropdown-menu li:hover {
     background: #334155;
+    
 }
 
 .dropdown:hover .dropdown-menu {
@@ -419,14 +422,13 @@ background: linear-gradient(
 
     background: rgba(15, 23, 42, 0.6);
     backdrop-filter: blur(12px);
+        position: relative;
+    overflow: hidden;
 
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-.redes {
-    position: relative;
-    overflow: hidden;
-}
+
 
 .redes::after {
     content: "";
@@ -438,7 +440,7 @@ background: linear-gradient(
     height: 2px;
 
     background: linear-gradient(
-        270deg, /* invertido */
+        270deg,
         transparent,
         rgba(56,189,248,0.4),
         #38bdf8,
@@ -449,7 +451,7 @@ background: linear-gradient(
     filter: blur(1px);
 
     animation: lineMoveReverse 4s linear infinite;
-    animation-delay: 4s; /* metade do tempo */
+    animation-delay: 4s; 
 }
 
 @keyframes lineMoveReverse {

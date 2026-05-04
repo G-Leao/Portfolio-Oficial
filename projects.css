@@ -72,25 +72,31 @@ body {
 }
 
 /* DROPDOWN */
+/* DROPDOWN */
 .dropdown {
     position: relative;
 }
 
+/* MENU */
 .dropdown-menu {
     position: absolute;
-    top: 100%;
+    top: 100%; /* 🔥 corrige alinhamento */
     left: 0;
+    min-width: 180px;
+
     background: #1e293b;
     border-radius: 10px;
     overflow: hidden;
     list-style: none;
+    z-index: 9999;
 
     opacity: 0;
     transform: translateY(10px);
     pointer-events: none;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
+/* ITENS */
 .dropdown-menu li {
     padding: 10px 20px;
 }
@@ -99,6 +105,31 @@ body {
     background: #334155;
 }
 
+/* LINKS */
+.dropdown-menu li a {
+    position: relative;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+/* LINHA ANIMADA (igual menu principal) */
+.dropdown-menu li a::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background: #38bdf8;
+    transition: 0.3s ease;
+}
+
+.dropdown-menu li a:hover::after {
+    width: 120%;
+}
+
+/* ABRIR */
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     transform: translateY(0);
@@ -145,7 +176,58 @@ body {
     background: rgba(255,255,255,0.03);
     padding: 40px;
     border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.05);
+
+    /* IMPORTANTE */
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    /* borda transparente pra reservar espaço */
+    border: 1px solid transparent;
+
+    backdrop-filter: blur(10px);
+}
+
+/* BORDA ANIMADA */
+.card-projeto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 2px;
+
+    background: linear-gradient(
+        90deg, 
+        transparent 0%, 
+        transparent 25%, 
+        rgba(0, 150, 255, 0.5) 50%, 
+        transparent 75%, 
+        transparent 100%
+    );
+
+    background-size: 200% 100%;
+
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+
+    animation: moveBorder 3s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes moveBorder {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
 }
 
 /* IMAGEM */
@@ -178,6 +260,12 @@ body {
     margin-bottom: 10px;
 }
 
+.dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px; /* ou 20px pra igualar */
+    display: block;
+}
 /* BOTÃO */
 .btn {
     padding: 10px 20px;

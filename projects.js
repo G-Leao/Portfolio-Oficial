@@ -22,3 +22,17 @@ imgAmpliada.addEventListener("click", function (e) {
     e.stopPropagation();
 });
 
+
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("nav-menu");
+
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+
+// dropdown mobile
+const dropdown = document.querySelector(".dropdown");
+
+dropdown.addEventListener("click", () => {
+    dropdown.classList.toggle("active");
+});

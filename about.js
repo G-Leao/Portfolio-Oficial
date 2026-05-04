@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    
+    // MENU MOBILE (ESSENCIAL)
     const menuToggle = document.getElementById("menu-toggle");
     const navMenu = document.getElementById("nav-menu");
 
@@ -28,16 +28,17 @@ document.addEventListener("DOMContentLoaded", () => {
         navMenu.classList.toggle("active");
     });
 
-    // DROPs
+    // DROPDOWN
     const dropdown = document.querySelector(".dropdown");
     const dropdownLink = dropdown.querySelector(".dropdown-toggle");
 
     dropdownLink.addEventListener("click", (e) => {
         e.preventDefault();
-        e.stopPropagation(); 
+        e.stopPropagation(); // importante
         dropdown.classList.toggle("active");
     });
 
+    // fechar dropdown ao clicar fora
     document.addEventListener("click", () => {
         dropdown.classList.remove("active");
     });

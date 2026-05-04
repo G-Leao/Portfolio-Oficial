@@ -82,45 +82,57 @@ body {
 }
 
 /* DROPDOWN */
+/* DROPDOWN */
 .dropdown {
     position: relative;
 }
 
+/* MENU */
 .dropdown-menu {
     position: absolute;
-    top: 40px;
+    top: 100%; /* 🔥 corrige alinhamento */
     left: 0;
+    min-width: 180px;
+
     background: #1e293b;
     border-radius: 10px;
     overflow: hidden;
     list-style: none;
+    z-index: 9999;
 
     opacity: 0;
     transform: translateY(10px);
     pointer-events: none;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
+/* ITENS */
 .dropdown-menu li {
     padding: 10px 20px;
 }
 
+.dropdown-menu li:hover {
+    background: #334155;
+}
 
+/* LINKS */
 .dropdown-menu li a {
     position: relative;
     display: inline-block;
     padding: 5px 0;
+    cursor: pointer;
 }
 
+/* LINHA ANIMADA (igual menu principal) */
 .dropdown-menu li a::after {
     content: "";
     position: absolute;
-    left: 50%;
     top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0%;
     height: 2px;
     background: #38bdf8;
-    transform: translateX(-50%);
     transition: 0.3s ease;
 }
 
@@ -128,10 +140,7 @@ body {
     width: 120%;
 }
 
-.dropdown-menu li:hover {
-    background: #334155;
-}
-
+/* ABRIR */
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     transform: translateY(0);
@@ -290,7 +299,57 @@ main {
     background: rgba(255,255,255,0.03);
     padding: 30px;
     border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.05);
+
+    /* IMPORTANTE */
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    border: 1px solid transparent;
+    backdrop-filter: blur(10px);
+}
+
+/* BORDA ANIMADA */
+.about-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 0.5px;
+
+    background: linear-gradient(
+        90deg, 
+        transparent 0%, 
+        rgba(0, 247, 255, 0.8)  40%, 
+        rgb(0, 56, 96) 50%, 
+        rgba(0, 247, 255, 0.8) 60%, 
+        transparent 100%
+    );
+
+    background-size: 300% 100%;
+
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+
+    animation: moveBorderCard 17s linear infinite;
+    pointer-events: none;
+}
+
+
+@keyframes moveBorderCard {
+    0% {
+        background-position: 300% 0;
+    }
+    100% {
+        background-position: -300% 0;
+    }
 }
 
 /* FOTO */
@@ -340,7 +399,7 @@ main {
     font-family: 'Italiana', serif;
 }
 
-.objetivo{
+.objetivo {
     max-width: 1100px;
     margin: auto;
     display: flex;
@@ -352,7 +411,47 @@ main {
     background: rgba(255,255,255,0.03);
     padding: 20px;
     border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.05);
+
+    /* IMPORTANTE */
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    border: 1px solid transparent;
+    backdrop-filter: blur(10px);
+}
+
+/* BORDA ANIMADA */
+.objetivo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+
+    background: linear-gradient(
+        90deg, 
+        transparent 0%, 
+        rgb(0, 149, 255) 40%, 
+        rgba(0, 150, 255, 1) 50%, 
+        rgba(1, 45, 76, 0.8) 60%, 
+        transparent 100%
+    );
+
+    background-size: 300% 100%;
+
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+
+    animation: moveBorderCard 17s linear infinite;
+    pointer-events: none;
 }
 
 .objetivo h4 {
@@ -521,6 +620,24 @@ footer {
     background: rgba(15, 23, 42, 0.6);
     border-top: 1px solid rgba(255,255,255,0.05);
     margin-top: 30px;
+}
+
+
+/*dropdown responsivo */
+@media (max-width: 768px) {
+
+    .dropdown-menu {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        position: static;
+        transform: none;
+    }
+
+    .dropdown.active .dropdown-menu {
+        max-height: 500px;
+        opacity: 1;
+    }
 }
 
 /* RESPONSIVO */

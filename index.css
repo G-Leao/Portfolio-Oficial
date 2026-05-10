@@ -145,7 +145,10 @@ background: linear-gradient(
 
 .nav-item a, .dropdown-toggle {
 
-    all: unset; 
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
     display: inline-block;
 
     color: white;
@@ -170,6 +173,8 @@ background: linear-gradient(
     background: #38bdf8;
     transition: 0.3s ease;
 }
+
+h1
 
 .nav-item a:hover::after {
     width: 120%; /* passa do texto */
@@ -256,7 +261,7 @@ background: linear-gradient(
 
 /* HOME */
 .home-content {
-    padding-top: 95px;
+    padding-top: 45px;
     max-width: 1100px;
     margin: auto;
     text-align: center;
@@ -272,6 +277,7 @@ background: linear-gradient(
     font-size: 18px;
     color: #94a3b8;
     margin-bottom: 30px;
+    font-style: italic;
 }
 
 /* BOTÕES */
@@ -330,9 +336,43 @@ background: linear-gradient(
     border-radius: 12px;
     width: 130px;
     text-align: center;
-    transition: 0.3s;
+
     border: 1px solid rgba(255,255,255,0.05);
-     backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+
+    text-decoration: none;
+    color: white;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.06),
+        transparent
+    );
+
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+.tech-item small {
+    display: block;
+    margin-top: 5px;
+    color: #94a3b8;
+    font-size: 12px;
 }
 
 .tech-item i {
@@ -343,7 +383,39 @@ background: linear-gradient(
 /* HOVER CARD */
 .tech-item:hover {
     transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+
+    box-shadow:
+        0 0 20px rgba(56, 189, 248, 0.25),
+        0 0 40px rgba(56, 189, 248, 0.08);
+
+    border-color: rgba(56,189,248,0.4);
+}
+
+.tech-item:hover::before {
+    transform: translateX(100%);
+}
+
+.tech-item span,
+.tech-item small {
+    display: block;
+}
+
+.tech-item small {
+    margin-top: 5px;
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+/* icones */
+.tech-item i {
+    font-size: 50px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* icone anima */
+.tech-item:hover i {
+    transform: scale(1.1) rotate(3deg);
 }
 
 /* ANIMAÇÃO */

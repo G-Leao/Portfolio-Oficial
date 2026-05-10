@@ -13,14 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll('.fade-slide').forEach(el => {
         observer.observe(el);
-
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
-            el.classList.add('show');
-        }
     });
 
-    // MENU MOBILE (ESSENCIAL)
+    // MENU MOBILE
     const menuToggle = document.getElementById("menu-toggle");
     const navMenu = document.getElementById("nav-menu");
 
@@ -34,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     dropdownLink.addEventListener("click", (e) => {
         e.preventDefault();
-        e.stopPropagation(); // importante
+        e.stopPropagation();
         dropdown.classList.toggle("active");
     });
 
